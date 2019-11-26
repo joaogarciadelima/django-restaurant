@@ -1,2 +1,2 @@
 release: python manage.py migrate --noinput
-web: gunicorn controledental.wsgi --log-file -
+web: gunicorn django-restaurant-rest.wsgi --log-file -
