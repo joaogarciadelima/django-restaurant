@@ -11,12 +11,12 @@ def index(request):
     return render(request, 'food/index.html', context)
 
 
-# Restframework
-@csrf_exempt
+# Rest api end point
 def get_rest_list(request):
     """
-    List all restaurants
+    Returns Json list of all restaurants
     """
-    rest_list = Restaurant.objects.order_by('-pub_date')
-    serializer = RestaurantSerializer(rest_list, many=True)
-    return JsonResponse(serializer.data, safe=False)
+    if request.method == "GET":
+        rest_list = Restaurant.objects.order_by('-pub_date')
+        serializer = RestaurantSerializer(rest_list, many=True)
+        return JsonResponse(serializer.data, safe=False)
