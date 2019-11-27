@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'collectfast',
     'django.contrib.staticfiles',
     'restaurant.base',
+    'restaurant.food',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
